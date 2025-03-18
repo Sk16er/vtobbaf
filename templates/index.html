@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Try-On</title>
+</head>
+<body>
+    <h1>Virtual Try-On</h1>
+    <img src="/video" width="640" height="480" />
+    <button onclick="changeAccessory('glasses')">Try Glasses</button>
+    <button onclick="changeAccessory('watch')">Try Watch</button>
+
+    <script>
+        function changeAccessory(accessory) {
+            fetch(`/change_accessory?accessory=${accessory}`, { method: 'GET' })
+                .then(() => console.log(`Accessory changed to ${accessory}`));
+        }
+    </script>
+</body>
+</html>
